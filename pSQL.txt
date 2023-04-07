@@ -1,0 +1,42 @@
+
+============
+SELECT * FROM pekarny_write
+CREATE TABLE pekarny_write(ID_ORDER bigint NOT NULL, ID_USER INT NOT NULL REFERENCES table_of_user (id),ADRES INT NOT NULL REFERENCES table_of_shop (id), TYPE INT NOT NULL REFERENCES pekarny_read_xleba (id), KOL_VO INTEGER NOT NULL, SUM FLOAT NOT NULL,TIME TEXT NOT NULL);
+============
+SELECT * FROM pekarny_read_xleba
+CREATE TABLE pekarny_read_xleba(ID INT PRIMARY KEY NOT NULL,VID TEXT NOT NULL ,TYPE TEXT NOT NULL, PRICE FLOAT NOT NULL, TIME INT NOT NULL);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (0,'Хлеб','Белый хлеб', 70, 15);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (1,'Хлеб','Бородинский хлеб', 60, 15);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (2,'Хлеб','Нарезной батон', 50, 15);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (3,'Хлеб','Французский багет', 90, 15);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (4,'Хлеб','Черный хлеб', 80, 15);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (5,'Сэндвич','C ветчиной', 80, 10);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (6,'Сэндвич','C курицей', 90, 10);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (7,'Сэндвич','C малиновым джемом', 70, 10);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (8,'Сэндвич','C грибами и сыром', 80, 10);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (9,'Сэндвич','C грибами и соусом', 75, 10);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (10,'Пицца','Ветчина и сыр', 330, 45);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (11,'Пицца','Четыре сыра', 350, 35);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (12,'Пицца','Салями', 330, 45);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (13,'Пицца','Курица и грибы', 350, 55);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (14,'Пицца','Маргарита', 300, 45);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (15,'Торт','Медовый', 280, 90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (16,'Торт','Наполеон', 260, 90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (17,'Торт','Шоколадный фондан', 300,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (18,'Торт','Чизкейк', 170,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (19,'Торт','Тарталетка фруктовая', 80,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (20,'Пирог','С капустой', 250,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (21,'Пирог','С мясом', 350,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (22,'Пирог','С картофелем и грибами', 300,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (23,'Пирог','С вишней', 300,90);
+INSERT INTO pekarny_read_xleba (ID,VID,TYPE,PRICE,TIME) VALUES (24,'Пирог','С яблоком', 320,90);
+SELECT * FROM pekarny_read_xleba;
+================
+SELECT * FROM table_of_user
+CREATE TABLE table_of_user(ID INT PRIMARY KEY NOT NULL, ID_USER bigint NOT NULL)
+================
+CREATE TABLE table_of_shop(ID INT PRIMARY KEY NOT NULL, adres TEXT NOT NULL);
+INSERT INTO table_of_shop (ID,adres) VALUES (0,'бульвар Чехова, 95');
+INSERT INTO table_of_shop (ID,adres) VALUES (1,'пер. Ломо, 91');
+INSERT INTO table_of_shop (ID,adres) VALUES (2,'пер. Ломоносова, 91');
+INSERT INTO table_of_shop (ID,adres) VALUES (3,'ул Дона, 1');
